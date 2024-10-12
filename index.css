@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Sets the font for the page */
+}
+
+.container {
+    display: flex; /* Uses flexbox to align items */
+}
+
+
+img {
+    width: 100%;
+    max-width: 700px;
+    margin-right: 20px; /* Adds space between the image and text */
+}
+
+.text {
+    max-width: 400px; /* Sets a maximum width for the text */
+    font-size: 30px;
+    font-weight: bold;
+    color: brown;
+}
