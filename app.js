@@ -3,8 +3,8 @@ let previousNumber = '';
 let operation = '';
 
 function appendNumber(number) {
-    currentNumber += number;
-    updateDisplay();
+    currentNumber += number
+    updateDisplay()
 }
 
 function updateDisplay() {
@@ -12,48 +12,52 @@ function updateDisplay() {
 }
 
 function setOperation(op) {
-    if (currentNumber === '') return;
-    if (previousNumber !== '') calculate();
-    operation = op;
-    previousNumber = currentNumber;
-    currentNumber = '';
+    if (currentNumber === '') {
+        return
+    }
+    if (previousNumber !== '') {
+        calculate()
+    }
+    operation = op
+    previousNumber = currentNumber
+    currentNumber = ''
 }
 
 function calculate() {
-    if (previousNumber === '' || currentNumber === '') return;
-    let result;
-    const prev = parseFloat(previousNumber);
-    const curr = parseFloat(currentNumber);
-    switch (operation) {
-        case '+':
-            result = prev + curr;
-            break;
-        case '-':
-            result = prev - curr;
-            break;
-        case '*':
-            result = prev * curr;
-            break;
-        case '/':
-            result = curr === 0 ? 'Error' : prev / curr;
-            break;
-        default:
-            return;
+    if (currentNumber == '' || previousNumber === '') {
+        return
     }
-    currentNumber = result.toString();
-    operation = '';
-    previousNumber = '';
-    updateDisplay();
+    let result
+    const prev = parseFloat(previousNumber)
+    const curr = parseFloat(currentNumber)
+    switch (operation) {
+        case ('+'):
+            result = prev + curr
+            break
+        case ('-'):
+            result = prev - curr
+            break
+        case ('/'):
+            result = prev / curr
+            break
+        case ('*'):
+            result = prev * curr
+            break
+        default:
+            return
+    }
+    currentNumber = result
+    operation = ''
+    previousNumber = ''
+    updateDisplay()
 }
-
 function clearDisplay() {
-    currentNumber = '';
-    previousNumber = '';
-    operation = '';
-    updateDisplay();
+    previousNumber = ''
+    currentNumber = ''
+    operation = ''
+    updateDisplay()
 }
-
 function deleteNumber() {
-    currentNumber = currentNumber.slice(0, -1);
-    updateDisplay();
+    currentNumber = currentNumber.slice(0, -1)
+    updateDisplay()
 }

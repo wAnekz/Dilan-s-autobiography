@@ -1,1 +1,1 @@
-This site is my own calculator, Im proud of myself
+This site is my own simple calculator.
