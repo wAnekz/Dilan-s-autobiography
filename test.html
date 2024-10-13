@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Dylan's autobiography</title>
-	<link rel="stylesheet" href="./index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-	<div class="container">
-		<img src="dylan.jpeg">
-		<p class="text">Hello, my name is Dylan, I'm 14. <br> I'm begginer in web dev, so I wish that I will be good at it.<n></n>
-			While I'm learning development, you can track me in social media: <br><br> <a target="_blank" href="https://www.instagram.com/wAnex0_0/">Instagram</a> <br><br>
-			<n></n> <a target="_blank" href="https://www.tiktok.com/@userkkqfw68fwp">TikTok</a></p>
-	</div>
-</body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="setOperation('/')">/</button>
 
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="setOperation('*')">×</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="setOperation('-')">−</button>
+
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button class="equals" onclick="calculate()">=</button>
+            <button onclick="setOperation('+')">+</button>
+
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteNumber()">DEL</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script> <!-- Link to the external JS file -->
+</body>
 </html>

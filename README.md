@@ -1,3 +1,1 @@
-MY NAME IS
-MY NAME IS
-CHYCKYCHYKY SLIM SHADY
+This site is my own calculator, Im proud of myself
