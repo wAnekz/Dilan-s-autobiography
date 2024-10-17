@@ -1,10 +1,19 @@
-let currentNumber = '';
-let previousNumber = '';
-let operation = '';
+let currentNumber = ''
+let previousNumber = ''
+let operation = ''
+let currOp = ''
 
 function appendNumber(number) {
     currentNumber += number
-    updateDisplay()
+    whichNum()
+}
+
+function whichNum() {
+    if(previousNumber != '') {
+        document.getElementById('display').value = `${previousNumber} ${currOp} ${currentNumber}`;
+    } else {
+        document.getElementById('display').value = `${currentNumber} ${currOp} ${previousNumber}`;
+    }
 }
 
 function updateDisplay() {
@@ -12,6 +21,8 @@ function updateDisplay() {
 }
 
 function setOperation(op) {
+    document.getElementById('display').value = `${currentNumber} ${op}`;
+
     if (currentNumber === '') {
         return
     }
@@ -19,12 +30,13 @@ function setOperation(op) {
         calculate()
     }
     operation = op
+    currOp = op
     previousNumber = currentNumber
     currentNumber = ''
 }
 
 function calculate() {
-    if (currentNumber == '' || previousNumber === '') {
+    if (currentNumber === '' || previousNumber === '') {
         return
     }
     let result
@@ -46,15 +58,16 @@ function calculate() {
         default:
             return
     }
+    document.getElementById('display').value = `${previousNumber} ${currOp} ${currentNumber} = ${result}`
     currentNumber = result
     operation = ''
     previousNumber = ''
-    updateDisplay()
 }
 function clearDisplay() {
     previousNumber = ''
     currentNumber = ''
     operation = ''
+    currOp = ''
     updateDisplay()
 }
 function deleteNumber() {
